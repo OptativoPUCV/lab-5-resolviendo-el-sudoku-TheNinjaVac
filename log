@@ -22,3 +22,14 @@ Tue, May 13, 2025 12:53:38 PM:
  tests:  2|4
 total_score: 15/70
 ddb0476
+Tue, May 13, 2025 12:54:41 PM: 
+ sudoku.c | 6 +++++-
+ 1 file changed, 5 insertions(+), 1 deletion(-)
+Compilation failed
+In file included from test.c:5:0:
+sudoku.c: In function 'get_adj_nodes':
+sudoku.c:59:27: error: unused variable 'new_node' [-Werror=unused-variable]
+                     Node* new_node = copy(n);
+                           ^~~~~~~~
+cc1.exe: all warnings being treated as errors
+0d0d869
