@@ -55,7 +55,19 @@ int is_valid(Node* n){
             return 0;
           }
         }
-        
+        for (int k = 0 ; k < 9 ; k+=3) {
+          for (int l = 0 ; l < 9 ; l+=3) {
+            int test[10] = {0};
+            for (int m = k ; m < k+3 ; m++) {
+              for (int p = l ; p < l+3 ; p++) { // Cambiar 'n' a 'p'
+              if (n->sudo[m][p] != 0) { // Usar 'p' en lugar de 'n'
+                if (test[n->sudo[m][p]] == 1) return 0;
+                test[n->sudo[m][p]] = 1;
+                }
+              }
+            }
+          }
+        }
       }
     }
   }
