@@ -43,35 +43,41 @@ void print_node(Node* n){
     printf("\n");
 }
 
-int is_valid(Node* n){
+int is_valid(Node* n) {
   for (int i = 0 ; i < 9 ; i++) {
     for (int j = 0 ; j < 9 ; j++) {
       if (n->sudo[i][j] != 0) {
         int num = n->sudo[i][j];
         n->sudo[i][j] = 0;
+
+        // Verificar fila y columna
         for (int k = 0 ; k < 9 ; k++) {
           if (n->sudo[i][k] == num || n->sudo[k][j] == num) {
             n->sudo[i][j] = num;
             return 0;
           }
         }
-        for (int k = 0 ; k < 9 ; k+=3) {
-          for (int l = 0 ; l < 9 ; l+=3) {
+
+        // Verificar subcuadrícula de 3x3
+        for (int k = 0 ; k < 9 ; k += 3) {
+          for (int l = 0 ; l < 9 ; l += 3) {
             int test[10] = {0};
-            for (int m = k ; m < k+3 ; m++) {
-              for (int p = l ; p < l+3 ; p++) { 
-              if (n->sudo[k][l] != 0) { 
-                if (test[n->sudo[k][l]] == 1) return 0;
-                test[n->sudo[k][l]] = 1;
+            for (int m = k ; m < k + 3 ; m++) {
+              for (int p = l ; p < l + 3 ; p++) {
+                if (n->sudo[m][p] != 0) { // Usar m y p en lugar de k y l
+                  if (test[n->sudo[m][p]] == 1) return 0;
+                  test[n->sudo[m][p]] = 1;
                 }
               }
             }
           }
         }
+
+        n->sudo[i][j] = num; // Restaurar el valor original
       }
     }
   }
-  
+
   return 1;
 }
 
