@@ -134,3 +134,17 @@ Sat, May 17, 2025  8:02:30 PM:
  tests:  7|1
 total_score: 55/70
 97e0170
+Sat, May 17, 2025  8:04:14 PM: 
+ sudoku.c | 7 +++++++
+ 1 file changed, 7 insertions(+)
+Compilation failed
+In file included from test.c:5:0:
+sudoku.c: In function 'DFS':
+sudoku.c:123:9: error: invalid use of void expression
+         Node* current = (Node*) popFront(stack);
+         ^~~~
+sudoku.c:123:15: error: unused variable 'current' [-Werror=unused-variable]
+         Node* current = (Node*) popFront(stack);
+               ^~~~~~~
+cc1.exe: all warnings being treated as errors
+209dc8d
