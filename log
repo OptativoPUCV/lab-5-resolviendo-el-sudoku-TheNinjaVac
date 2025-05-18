@@ -63,3 +63,56 @@ Tue, May 13, 2025  1:18:31 PM:
  tests:  6|2
 total_score: 45/70
 c2c21ed
+Sat, May 17, 2025  8:00:43 PM: 
+ sudoku.c | 115 ---------------------------------------------------------------
+ 1 file changed, 115 deletions(-)
+Compilation failed
+test.c: In function 'adj_test1':
+test.c:59:21: error: implicit declaration of function 'read_file' [-Werror=implicit-function-declaration]
+     Node* initial = read_file("s12a.txt");
+                     ^~~~~~~~~
+test.c:59:21: error: initialization makes pointer from integer without a cast [-Werror=int-conversion]
+test.c:62:17: error: implicit declaration of function 'get_adj_nodes' [-Werror=implicit-function-declaration]
+     List* adj = get_adj_nodes(initial);
+                 ^~~~~~~~~~~~~
+test.c:62:17: error: initialization makes pointer from integer without a cast [-Werror=int-conversion]
+test.c:95:9: error: assignment makes pointer from integer without a cast [-Werror=int-conversion]
+     adj = get_adj_nodes(initial);
+         ^
+test.c: In function 'test_isvalid':
+test.c:108:21: error: initialization makes pointer from integer without a cast [-Werror=int-conversion]
+     Node* initial = read_file("s12a.txt");
+                     ^~~~~~~~~
+test.c:112:9: error: implicit declaration of function 'is_valid' [-Werror=implicit-function-declaration]
+     if(!is_valid(initial)){
+         ^~~~~~~~
+test.c: In function 'test_mod_adj':
+test.c:152:21: error: initialization makes pointer from integer without a cast [-Werror=int-conversion]
+     Node* initial = read_file("s12a.txt");
+                     ^~~~~~~~~
+test.c:155:17: error: initialization makes pointer from integer without a cast [-Werror=int-conversion]
+     List* adj = get_adj_nodes(initial);
+                 ^~~~~~~~~~~~~
+test.c: In function 'test_isfinal':
+test.c:178:21: error: initialization makes pointer from integer without a cast [-Werror=int-conversion]
+     Node* initial = read_file("s12a.txt");
+                     ^~~~~~~~~
+test.c:180:8: error: implicit declaration of function 'is_final' [-Werror=implicit-function-declaration]
+     if(is_final(initial)){
+        ^~~~~~~~
+test.c: In function 'test_dfs':
+test.c:203:21: error: initialization makes pointer from integer without a cast [-Werror=int-conversion]
+     Node* initial = read_file("s12a.txt");
+                     ^~~~~~~~~
+test.c:206:19: error: implicit declaration of function 'DFS' [-Werror=implicit-function-declaration]
+     Node* final = DFS(initial, &cont);
+                   ^~~
+test.c:206:19: error: initialization makes pointer from integer without a cast [-Werror=int-conversion]
+test.c:226:13: error: assignment makes pointer from integer without a cast [-Werror=int-conversion]
+     initial = read_file("s12a.txt");
+             ^
+test.c:230:11: error: assignment makes pointer from integer without a cast [-Werror=int-conversion]
+     final = DFS(initial, &cont);
+           ^
+cc1.exe: all warnings being treated as errors
+f9b8460
