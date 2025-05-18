@@ -120,12 +120,13 @@ Node* DFS(Node* initial, int* cont){
     pushFront(stack, initial);
 
     while (!is_empty(stack)) {
-        
+        Node* current = front(stack);
         popFront(stack);
         (*cont)++;
-        
-        
-        
+        if (is_final(current)) {
+            clean(stack);
+            return current;
+        }
     }
     return NULL;
 }
