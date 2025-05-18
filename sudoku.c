@@ -127,6 +127,16 @@ Node* DFS(Node* initial, int* cont){
             clean(stack);
             return current;
         }
+        List* adj = get_adj_nodes(current); 
+
+        Node* adjNode = first(adj);          
+        while (adjNode != NULL) {
+            push(stack, adjNode);
+            adjNode = next(adj);
+        }
+
+        free(current);            // e) liberar memoria del nodo actual
+        free(adj);                // liberar lista de adyacentes
     }
     return NULL;
 }
